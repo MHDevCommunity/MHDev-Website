@@ -1,0 +1,22 @@
+<section id="social">
+  <div class="social-posts outer-container">
+    <h1>Social Feed</h1>
+    
+    <ul ng-controller="PostsCtrl">
+      <div class="loader">
+        <img class="loader" src="../static/images/balls.svg" alt="loading" ng-if="!loaded" />
+      </div>
+      
+      <li ng-repeat="post in posts">
+        <a href="/article/{{ post.id }}">
+          <div class="image" ng-if="post.image" image-background="{{ post.image }}" />
+          <p>{{ post.title }}</p>
+        </a>
+
+        <!--<div class="social">
+          <h4 ng-click="fbshare(post.id)">Share</h4>
+        </div>-->
+      </li>
+    </ul>
+  </div>
+</section>

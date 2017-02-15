@@ -1,0 +1,66 @@
+//-------------------------------------
+// Layout & comp.
+//-------------------------------------
+
+body {
+  /*@include background-image(url("../static/images/5.jpg"));
+  background-size: cover;
+  background-attachment: fixed;*/
+  background: white; 
+}
+
+.background-image {
+  @include position(fixed, 0 0 0 0);
+  z-index: -1;
+}
+
+.sprite {
+  @include size(0);
+  position: absolute;
+  visibility: hidden;
+}
+
+.outer-container {
+  @include row;
+  max-width: 1200px;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 0 auto;
+}
+
+.main-content {
+
+  /* Animating state changes */
+
+  &.ng-enter,
+  &.ng-leave {
+    @include transition(all .3s cubic-bezier(.4, 0, .2, 1));
+  }
+
+  &.ng-enter {
+    @include transform(translate3d(0,5px,0));
+    opacity: 0;
+  }
+
+  &.ng-enter-active {
+    opacity: 1;
+    @include transform(translate3d(0,0,0));
+  }
+
+  &.ng-leave {
+    opacity: 1; 
+    @include transform(translate3d(0,0,0));
+  }
+
+  &.ng-leave-active {
+    opacity: 0;
+    @include transform(translate3d(0,0,0));
+  }
+
+  &.page {
+    section {
+      @include row;
+      padding: 6em 0;
+    }
+  }
+}

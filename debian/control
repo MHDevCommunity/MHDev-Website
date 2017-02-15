@@ -1,0 +1,10 @@
+Source:             web-marketing-sumup
+Section:            SumUp/Applications
+Priority:           optional
+Maintainer:         Petar Burunsuzov <petar.burunsuzov@sumup.com>
+Standards-Version:  15.15-3
+Homepage:           https://github.com/sumup/web-marketing
+
+Package:            web-marketing-sumup
+Architecture:       all
+Description:        SumUp Marketing website backend

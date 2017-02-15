@@ -1,0 +1,53 @@
+//-------------------------
+// Socail Feed
+//-------------------------
+
+#social {
+
+  ul {
+    @include columns(4 1em);
+
+    li {
+      @include transition(all .2s ease);
+      display: inline-block;
+      width: 100%;
+      background: rgba(30, 30, 30, 0.6);
+      box-shadow: 0 1px 2px rgba(113, 113, 113, 0.4);
+      -webkit-column-break-inside: avoid;
+      -moz-column-break-inside: avoid;
+      column-break-inside: avoid;
+      padding: .5em;
+      margin: .5em 0;
+      opacity: 1;
+
+      p {
+        margin: 1em .5em;
+        color: $colorOffWhite;
+      }
+
+      .image {
+        height: 10em;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 1em;
+      }
+
+      .social {
+        margin-top: 1em;
+        
+        svg.icon { 
+          @include size(1.2em);
+          float: left;
+          margin-right: .5em;
+        }
+        
+        h4 {
+          display: inline-block;
+          margin: .1em 1em 0 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

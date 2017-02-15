@@ -1,0 +1,53 @@
+// Forms, inputs, fieldsets, etc.
+// Styleguide 1.0.
+
+form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+error {
+  @include position(fixed, 6em null null 30%);
+  width: 40%;
+  background: $colorErrorDarker;
+  color: white;
+  border-radius: 3px;
+  padding: 1em 1.5em;
+  margin: 0 auto;
+
+  close {
+    cursor: pointer;
+    float: right;
+    font-size: 2em;
+    line-height: .4em;
+  }
+}
+
+label {
+  @include transition(color .2s);
+  display: block;
+  margin-bottom: 1px;
+  font-size: em(10, 14);
+  font-weight: 300;
+  text-transform: uppercase;
+  color: $colorDarkGrey;
+}
+
+input, textarea {
+  width: 100%;
+  display: block;
+  transition: border-color .2s;
+  outline: none;
+  background: white;
+  height: 3.3em;
+  border: 1px solid $colorLightGrey;
+  border-radius: 3px;
+  padding: .8em 1em;
+  margin: 1em 0;
+}
+
+textarea { height: 15em }
+
+form hr { margin: 2em 0 }
+
+#submit { @extend %button }

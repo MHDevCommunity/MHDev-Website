@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+
+override_dh_auto_build:
+	git submodule update --init --recursive
+	npm install
+	bower install
+	gulp
+
+override_dh_installchangelogs:
+
+override_dh_auto_install:
+	mkdir -p debian/web-marketing-sumup/home/sumup/webapps/web-marketing
+
+	# install files
+	cp -a dist/*  debian/web-marketing-sumup/home/sumup/webapps/web-marketing/
+
+	dh_installinit
+

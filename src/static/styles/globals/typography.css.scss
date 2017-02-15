@@ -1,0 +1,81 @@
+// Type settings, font styles, etc
+// Styleguide 1.0.
+
+@include font-face(museo-rounded, "../static/fonts/HelveticaNeue-Thin");
+
+$fontFamilyBody: 'Open Sans', sans-serif;
+$fontFamilyDisplay: museo-rounded, Helvetica, Arial, sans-serif;
+
+body {
+  @include font-feature-settings("kern");
+  font-family: $fontFamilyBody;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.3em;
+  color: darken($colorMediumGrey, 10%);
+  text-rendering: optimizeLegibility;
+}
+
+//-------------------------------------
+// Headlines
+//-------------------------------------
+
+h1, h2, h3, h4 {
+  font-family: $fontFamilyDisplay;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+}
+
+h2, h3, h4 {
+  font-family: $fontFamilyBody;
+  font-weight: 300;
+}
+
+a {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    color: $colorMediumGrey;
+  }
+}
+
+h1 {
+  font-size: 3.5em;
+  line-height: 1.3;
+
+  @include media($breakTabletPortrait) { font-size: 3.5em }
+  @include media($breakTabletLandscape) { font-size: 3.75em }
+  @include media($breakDesktop) { font-size: 4em }
+}
+
+h2 { font-size: 1.6em }
+
+h3 { font-size: 1.2em }
+
+h4 { font-size: 1em }
+
+
+//-------------------------------------
+// Copy semantics
+//-------------------------------------
+
+small {
+  font-size: em(11);
+  display: inline-block;
+  line-height: 1.3em;
+  text-transform: uppercase;
+  color: darken($colorLightGrey, 20%);
+  font-weight: 500;
+}
+
+em, strong { font-weight: 500 }
+
+p {
+  margin: 1em 0;
+  line-height: 1.25em;
+}
+
+figure { margin: 0 }

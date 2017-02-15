@@ -1,0 +1,52 @@
+<section id="learning-centre" ng-controller="ResourcesCtrl">
+  <div class="social-posts outer-container">
+    <h1>Learning Centre</h1>
+
+    <div class="learning-menu">
+      <p>What would you like to learn more about?</p>
+
+      <ul id="catgegory-list" class="learning-menu-list">
+        <li ng-repeat="item in catagories" ng-click="showSubcategories(item)">
+          <h3>{{ item }}</h3>
+        </li>
+      </ul>
+
+      <ul id="subcatgegory-list" class="learning-menu-list">
+        <li ng-repeat="item in resources | filter:category" ng-hide="!category" ng-click="setSubcategory(item)">
+          <h2>{{ category }}</h2>
+          <h3>{{ item.subcategory }}</h3>
+        </li>
+      </ul>
+    </div>
+
+    <div class="learning-content">
+      <div class="loader">
+        <img class="loader" src="../static/images/balls.svg" alt="loading" ng-if="!loaded" />
+      </div>
+
+      <ul ng-if="filtered.docs.length > 0">
+        <h2>Docs</h2>
+
+        <li ng-repeat="item in filtered.docs | filter:category | filter:subcategory">
+          <h3>{{ item.title }}</h3>
+        </li>
+      </ul>
+
+      <ul ng-if="filtered.video.length > 0">
+        <h2>Video Tutorials</h2>
+
+        <li ng-repeat="item in filtered.video | filter:category | filter:subcategory">
+          <h3>{{ item.title }}</h3>
+        </li>
+      </ul>
+
+      <ul ng-if="filtered.article.length > 0">
+        <h2>Articles</h2>
+
+        <li ng-repeat="item in filtered.article | filter:category | filter:subcategory">
+          <h3>{{ item.title }}</h3>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

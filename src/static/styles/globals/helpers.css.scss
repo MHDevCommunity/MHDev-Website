@@ -1,0 +1,83 @@
+// Layout and display helpers
+// Styleguide 1.0.
+
+//-------------------------------------
+// Display
+//-------------------------------------
+
+%inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+//-------------------------------------
+// Custom float clearing
+//-------------------------------------
+
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+
+//-------------------------------------
+// Alignment
+//-------------------------------------
+
+%vertical-align {
+  @include transform(translate3d(0, -50%, 0));
+  position: relative;
+  top: 50%;
+}
+
+//-------------------------------------
+// Buttons and inputs
+//-------------------------------------
+
+%button {
+  @include transition(all .2s cubic-bezier(.4, .0, .2, 1));
+  border-radius: 3px;
+  position: relative;
+  display: block;
+  text-shadow: 0 1px 0px rgba(black, .2);
+  text-align: center;
+  border: none;
+  padding: 1.1em 1.6em;
+  background: $colorCorpHighlight;
+  color: white;
+  cursor: pointer;
+  
+  &:hover,
+  &:active,
+  &:focus {
+    @include transition(all .2s cubic-bezier(.4, .0, .2, 1));
+    background: darken($colorCorpHighlight, 5%);
+  }
+  
+  a:link, a:visited, a:hover, a:active, a:focus { color: $colorOffWhite }
+
+  &.outline {
+    border: 1px solid $colorOffWhite;
+    color: $colorOffWhite;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    &:hover,
+    &:active,
+    &:focus {
+      @include transition(all .2s cubic-bezier(.4, .0, .2, 1));
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  @include media($breakTabletLandscape) { display: inline-block }
+}
+
+//-------------------------------------
+// Static URL
+//-------------------------------------
+
+@mixin static-image($url, $position: center center, $size: null, $repeat: no-repeat) {
+  background-image: url('#{$url}');
+  background-position: $position;
+  background-size: $size;
+  background-repeat: $repeat;
+}

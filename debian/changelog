@@ -1,0 +1,5 @@
+web-marketing-sumup (15.15-3) testing; urgency=low
+
+  * Initial debian package release.
+
+ -- Petar Burunsuzov <petar.burunsuzov@sumup.com>  Tue, 21 Apr 2015 15:57:00 +0300
