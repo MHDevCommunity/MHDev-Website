@@ -18,13 +18,13 @@ a { text-decoration: none }
 p a {
   @include transition(all .2s);
   text-decoration: underline;
-  color: $colorCorpHighlight;
+  color: $colorMainBlue;
 
   &:hover,
   &:active,
   &:focus {
     @include transition(all .2s);
-    color: $colorCorpHighlight;
+    color: $colorMainBlue;
   }
 }
 
@@ -54,15 +54,15 @@ img.user-image {
 }
 
 .topbar {
-  @include size(100% 5em);
-  margin-top: 1em;
+  @include size(100% 2.5em);
+  padding: 1em 0 2.4em;
 
   .logo {
     @include position(absolute, .5em null null 1em);
 
     svg.icon {
       @include position(fixed, -1em -1em null null);
-      @include size(10em);
+      @include size(8em);
       fill: rgba(0, 0, 0, 0.5);
     }
   }
@@ -71,11 +71,16 @@ img.user-image {
     font-family: $fontFamilyDisplay;
     font-size: 1.3em;
     margin-right: 2em;
+    font-weight: 600;
+    letter-spacing: .8px;
+    padding-bottom: .1em;
     
-    &.active {
-      border-bottom: 1px solid darken($colorOffWhite, 40%);
-    }
+    &.active { border-bottom: 1px solid darken($colorOffWhite, 20%); }
   }
+}
+
+.page-header {
+  padding: 2em 0;
 }
 
 a.button {

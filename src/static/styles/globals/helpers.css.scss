@@ -42,7 +42,7 @@
   text-align: center;
   border: none;
   padding: 1.1em 1.6em;
-  background: $colorCorpHighlight;
+  background: $colorMainBlue;
   color: white;
   cursor: pointer;
   
@@ -50,7 +50,7 @@
   &:active,
   &:focus {
     @include transition(all .2s cubic-bezier(.4, .0, .2, 1));
-    background: darken($colorCorpHighlight, 5%);
+    background: darken($colorMainBlue, 5%);
   }
   
   a:link, a:visited, a:hover, a:active, a:focus { color: $colorOffWhite }

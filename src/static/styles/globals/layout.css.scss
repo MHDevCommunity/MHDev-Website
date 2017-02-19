@@ -9,11 +9,6 @@ body {
   background: white; 
 }
 
-.background-image {
-  @include position(fixed, 0 0 0 0);
-  z-index: -1;
-}
-
 .sprite {
   @include size(0);
   position: absolute;
