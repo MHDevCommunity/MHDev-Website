@@ -9,7 +9,7 @@
  */
 
 var mysql = require('mysql');
-var config = require('../config');
+var config = require('../config.js');
 
 module.exports = mysql.createPool({
     connectionLimit : 10,
