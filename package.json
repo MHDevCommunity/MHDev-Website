@@ -70,7 +70,7 @@
     "handlebars": "^4.0.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": "7.7.1"
   },
   "scripts": {
     "start": "node server.js",
