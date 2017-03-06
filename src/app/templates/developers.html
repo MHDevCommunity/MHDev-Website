@@ -1,0 +1,18 @@
+<nav class="topbar" ng-include="'/app/templates/partials/topbar.html'"></nav>
+
+<div class="main-content" ng-controller="DevelopersCtrl">
+  <section id="developer-network">
+    <div class="page-header">
+      <div class="outer-container">
+        <h1>Developer Network</h1>
+      </div>
+    </div>
+
+    <section id="developer-notice" ng-if="!user.login" ng-include="'/app/pages/developers/developer-notice.html'"></section>
+
+    <div class="outer-container">
+      <section id="developer-menu" class="box" ng-if="user.login" ng-include="'/app/pages/developers/developer-menu.html'"></section>
+      <section id="developer-home" ng-if="user.login" ui-view></section>
+    </div>
+  </section>
+</div>

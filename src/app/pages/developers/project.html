@@ -1,0 +1,83 @@
+<div id="project" ng-repeat="project in repos | filter:projectID">
+  <div class="project-overview">
+    <h2>{{ project.name }}</h2>
+    <p>{{ project.description }}</p>
+
+    <div class="readme" data-ng-init="getReadme(project.name)">
+      {{ readme.contents }}
+    </div>
+
+    <zero-md file="https://github.com/MHDevCommunity/MHDev-Website/blob/master/README.md">
+      <div class="md-html"></div>
+    </zero-md>
+
+    <div class="clone">
+      <p>Clone this repo:</p>
+      <pre>{{ project.ssh_url }}</pre>
+    </div>
+
+    <div class="links">
+      <a href="https://overv.io/MHDevCommunity/{{ project.name }}" target="_blank">
+        <svg class="icon">
+          <use xlink:href="#icon-overview" />
+        </svg>
+
+        <p>View Kanban board</p>
+      </a>
+
+      <a href="{{ project.html_url }}" target="_blank">
+        <svg class="icon">
+          <use xlink:href="#icon-github" />
+        </svg>
+
+        <p>View GitHub repo</p>
+      </a>
+
+      <a href="slack://open?team=U453F4TLH">
+        <svg class="icon">
+          <use xlink:href="#icon-slack" />
+        </svg>
+
+        <p>Join Slack discussion</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="project-history box" ng-init="getRepoHistory(project.name);">
+      <h3>Project History</h3>
+
+      <div class="history-container">
+        <div class="history-box" ng-repeat="item in history">
+          <img class="user-image" src="{{ item.author.avatar_url }}" alt="{{ item.commit.author.name }}" />
+
+          <div class="commit-user">
+            <a href="{{ item.url }}" target="_blank">
+              <span>{{ item.commit.message }}</span>
+            </a>
+
+            <a href="{{ item.author.html_url }}" target="_blank">
+              <p>{{ item.commit.committer.date | date:'d MMMM yy' }} - {{ item.commit.author.name }} - {{ item.author.login }}</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="open-issues box" ng-init="getOpenIssues(project.name);">
+      <h3>Open Issues</h3>
+
+      <div class="issues-container">
+        <div class="issues-box" ng-repeat="item in issues | orderBy:'number'">
+          <a href="https://overv.io/MHDevCommunity/{{ project.name }}">#{{ item.number }}</a> {{ item.title }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--<p>
+In this section:<br>
+* Open issues<br>
+* Allow user to access slack chat<br>
+</p>-->
+</div>

@@ -1,0 +1,23 @@
+<h3>Current projects</h3>
+
+<ul>
+  <li ng-repeat="repo in repos">
+    <svg class="icon">
+      <use xlink:href="#icon-repo" />
+    </svg>
+    
+    <a href="/project/{{ repo.id }}">{{ repo.name }}</a>
+  </li>
+</ul>
+
+<h3>Resources</h3>
+
+<ul>
+  <li>
+    <svg class="icon">
+      <use xlink:href="#icon-guide" />
+    </svg>
+    
+    <a href="">Guides</a>
+  </li>
+</ul>

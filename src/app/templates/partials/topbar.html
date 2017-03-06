@@ -1,14 +1,25 @@
-<div class="logo">
+<div class="outer-container">
   <a ui-sref="frontpage.home">
-    <svg class="icon">
+    <svg class="icon logo">
       <use xlink:href="#icon-logo" />
     </svg>
   </a>
-</div>
 
-<div class="menu-links outer-container">
-  <a ui-sref="page.dev" ui-sref-active="active">Developer Network</a>
-  <a ui-sref="page.learning" ui-sref-active="active">Learning Center</a>
-  <a ui-sref="page.social" ui-sref-active="active">Articles</a>
-  <a ui-sref="page.about" ui-sref-active="active">About</a>
+  <div class="menu-links">
+    <a ui-sref="developers.developer-network" ui-sref-active="active">Developer Network</a>
+    <a ui-sref="page.learning" ui-sref-active="active">Learning Center</a>
+    <a ui-sref="page.social" ui-sref-active="active">Articles</a>
+  </div>
+
+  <div class="user-info">
+    <a ng-if="user.login" ui-sref="page.developer-home">
+      <img ng-src="{{ user.avatar_url }}" alt="avatar" />
+    </a>
+
+    <a ng-if="!user.login" ui-sref="page.login">
+      <svg class="icon">
+        <use xlink:href="#icon-login1" />
+      </svg>
+    </a>
+  </div>
 </div>

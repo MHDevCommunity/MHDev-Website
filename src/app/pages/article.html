@@ -3,9 +3,11 @@
     <img class="loader" src="../static/images/balls.svg" alt="loading" ng-if="!loaded" />
   </div>
 
-  <div class="article-image" ng-if="post.image" image-background="{{ post.image }}"></div>
-  <h1 class="article-title">{{ post.title }}</h1>
-  <a href="{{ post.link }}" target="_blank">{{ post.link }}</a>
-  
+  <div class="article-sidebar">
+    <div class="article-image" ng-if="post.image" image-background="{{ post.image }}"></div>
+    <h1 class="article-title">{{ post.title }}</h1>
+    <a href="{{ post.link }}" target="_blank">{{ post.link }}</a>
+  </div>
+
   <div class="article-content" ng-bind-html="post.content"></div>
 </section>

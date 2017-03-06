@@ -1,0 +1,39 @@
+<div id="login" ng-controller="UserCtrl">
+  <div class="page-header">
+    <div class="outer-container">
+      <h1>Login to the Developer Network</h1>
+    </div>
+  </div>
+
+  <div class="outer-container">
+    <div class="half">
+      <h2>Under Development</h2>
+      <p>This section is currently under development.</p>
+      <p>Our vision is to build a strong community of coders and give them a playground to work on new and interesting projects together.</p>
+      <p>We are looking for more developers who are interested in being part of the Development Network from the early stages. The Developer Network will be non-discriminatory platform welcoming developers of all communities, skill levels and experience.</p>
+
+      <h2>Benefits of the Developer Network</h2>
+
+      <ul>
+        <li>Work on cool and interesting projects with a community of like minded people.</li>
+        <li>Improve your coding skills though non-discriminatory peer review, or if you have advanced knowledge of a subject, help others improve the quality of their code.</li>
+        <li>Be credited as a project contibutor and show off your code contibutions on your GitHub page.</li>
+        <li>LinkedIn endorsements available upton request.</li>
+        <li>With substantial contibutions to projects, you can list MarcusHorne Development as a job refernce and we will be happy to give you a great recommendation.</li>
+      </ul>
+    </div>
+
+    <form class="half login-form" ng-submit="loginUser(login)">
+      <label>GitHub Username</label>
+      <div class="github-url">https://github.com/</div>
+      <input class="github-input" type="text" data-ng-model="login.username" ng-required />
+
+      <label>Password</label>
+      <input type="password" data-ng-model="login.password" ng-required />
+
+      <div class="error" ng-if="error"  ng-include="'/app/pages/partials/error.html'"></div>
+
+      <input id="submit" type="submit" value="LOGIN" />
+    </form>
+  </div>
+</div>

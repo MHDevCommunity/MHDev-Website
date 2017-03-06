@@ -1,10 +1,25 @@
 #developer-network {
-  .notice {
+  #notice {
     h2 { margin: 1em 0 }
-    
+
     li {
       list-style: disc;
       margin: .5em 0 0 2em;
     }
   }
+
+  #developer-menu {
+    @include span-columns(12 of 12);
+
+    @include media($breakTabletLandscape) { @include span-columns(3 of 12) }
+
+    svg.icon, a { float: left }
+
+    ul {
+      min-height: 2em;
+      margin: 1em 0;
+    }    
+  }
+
+  #developer-home { @include span-columns(9 of 12) }
 }

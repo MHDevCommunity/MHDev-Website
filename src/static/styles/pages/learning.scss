@@ -1,26 +1,33 @@
 #learning-centre {
   .learning-menu {
     @include span-columns(3 of 12);
-    border-right: 1px solid darken($colorOffWhite, 40%);
     margin-top: 2em;
     padding-right: 1em;
-    
+
     .learning-menu-list li { cursor: pointer }
     
-    h3 { margin: .5em 0 }
-    p { margin: 0 0 2em }
+    h4 {
+      @extend %bolden;
+      margin: 1.1em 0;
+    }
+    
+    img {
+      @include size(1.2em);
+      float: left;
+      margin: .05em .5em 0 0;
+    }
   }
-  
+
   .learning-content {
     @include span-columns(9 of 12);
     margin-top: 2em;
-    
+
     ul { margin-bottom:  4em }
   }
-  
-  .learning-content h2, .learning-menu h2 {
+
+  .learning-content h2 {
     border-bottom: 1px solid darken($colorOffWhite, 40%);
-      padding-bottom: .2em;
-      margin-bottom: 1em;
+    padding-bottom: .5em;
+    margin-bottom: 1em;
   }
 }

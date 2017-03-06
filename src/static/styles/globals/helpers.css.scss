@@ -45,14 +45,14 @@
   background: $colorMainBlue;
   color: white;
   cursor: pointer;
-  
+
   &:hover,
   &:active,
   &:focus {
     @include transition(all .2s cubic-bezier(.4, .0, .2, 1));
     background: darken($colorMainBlue, 5%);
   }
-  
+
   a:link, a:visited, a:hover, a:active, a:focus { color: $colorOffWhite }
 
   &.outline {
@@ -69,6 +69,18 @@
   }
 
   @include media($breakTabletLandscape) { display: inline-block }
+}
+
+//-------------------------------------
+// Bold text
+//-------------------------------------
+
+%bolden {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .9em;
 }
 
 //-------------------------------------

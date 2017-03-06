@@ -4,7 +4,7 @@
   "dependencies": {
     "babel-cli": "^6.5.1",
     "babel-preset-es2015": "^6.5.0",
-    "body-parser": "^1.16.0",
+    "body-parser": "^1.16.1",
     "bower": "^1.7.9",
     "browser-sync": "~2.1.4",
     "browser-sync-spa": "~1.0.1",
@@ -15,7 +15,8 @@
     "ejs": "^2.5.2",
     "express": "^4.13.4",
     "fb": "^1.1.1",
-    "gulp": "~3.8.10",
+    "github-oauth": "^0.2.2",
+    "gulp": "3.9.1",
     "gulp-angular-filesort": "~1.0.4",
     "gulp-angular-templatecache": "~1.5.0",
     "gulp-angular-translate": "~0.1.4",
@@ -45,7 +46,6 @@
     "gulp-uglify": "~1.1.0",
     "gulp-useref": "~1.1.0",
     "gulp-util": "~3.0.2",
-    "handlebars": "~2.0.0",
     "html-metadata": "git://github.com/wikimedia/html-metadata.git",
     "http": "0.0.0",
     "http-proxy": "~1.8.0",
@@ -56,6 +56,7 @@
     "merge-stream": "~0.1.7",
     "mkdirp": "^0.5.1",
     "mysql": "^2.12.0",
+    "passport-github": "^1.1.0",
     "request": "^2.79.0",
     "require-dir": "~0.1.0",
     "sqlstring": "^2.2.0",
@@ -64,6 +65,9 @@
     "vinyl": "~1.1.0",
     "wiredep": "~2.2.0",
     "wrench": "~1.5.8"
+  },
+  "devDependencies": {
+    "handlebars": "^4.0.0"
   },
   "engines": {
     "node": ">=0.10.0"

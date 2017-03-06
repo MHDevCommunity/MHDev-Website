@@ -2,12 +2,7 @@
 // Layout & comp.
 //-------------------------------------
 
-body {
-  /*@include background-image(url("../static/images/5.jpg"));
-  background-size: cover;
-  background-attachment: fixed;*/
-  background: white; 
-}
+body { background: white }
 
 .sprite {
   @include size(0);
@@ -15,12 +10,19 @@ body {
   visibility: hidden;
 }
 
-.outer-container {
+.outer-container, .inner-container {
   @include row;
   max-width: 1200px;
   padding-left: 1em;
   padding-right: 1em;
   margin: 0 auto;
+}
+
+.inner-container { max-width: 1000px }
+
+.half {
+  @include span-columns(6 of 12);
+  @include omega(2n);
 }
 
 .main-content {

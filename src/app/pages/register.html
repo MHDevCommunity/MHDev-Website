@@ -1,0 +1,24 @@
+<div id="register" ng-controller="UserCtrl">
+  <div class="page-header">
+    <div class="outer-container">
+      <h1>Register for the Developer Network</h1>
+    </div>
+  </div>
+  
+  <div class="inner-container">
+    <form ng-submit="registerUser(register)">
+        <label>GitHub Username</label>
+        <input type="text" data-ng-model="register.username" ng-required />
+
+        <label>Password</label>
+        <input type="password" data-ng-model="register.password" ng-required />
+
+        <label>Repeat Password</label>
+        <input type="password" data-ng-model="register.repeatPassword" ng-required />
+
+        <div class="error" ng-if="error"  ng-include="'/app/pages/partials/error.html'"></div>
+
+        <input id="submit" type="submit" value="REGISTER ME" />
+      </form>
+  </div>
+</div>

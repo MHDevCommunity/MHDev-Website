@@ -53,34 +53,33 @@ img.user-image {
   border-radius: 50%;
 }
 
-.topbar {
-  @include size(100% 2.5em);
-  padding: 1em 0 2.4em;
-
-  .logo {
-    @include position(absolute, .5em null null 1em);
-
-    svg.icon {
-      @include position(fixed, -1em -1em null null);
-      @include size(8em);
-      fill: rgba(0, 0, 0, 0.5);
-    }
-  }
-
-  .menu-links a {
-    font-family: $fontFamilyDisplay;
-    font-size: 1.3em;
-    margin-right: 2em;
-    font-weight: 600;
-    letter-spacing: .8px;
-    padding-bottom: .1em;
-    
-    &.active { border-bottom: 1px solid darken($colorOffWhite, 20%); }
-  }
-}
-
 .page-header {
   padding: 2em 0;
+  background: $colorMainBlue;
+  color: white;
+  margin-bottom: 2em;
+}
+
+.box {
+  border: 1px solid darken($colorLightGrey, 20%);
+  border-radius: 3px;
+  padding: .5em;
+  margin-bottom: 1em;
+
+  svg.icon {
+    @include size(1.5em);
+    fill: $colorDarkGrey;
+    margin: .1em .2em 0 0;
+  }
+
+  h3 {
+    padding-bottom: .5em;
+    border-bottom: 1px solid $colorMainBlue;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: .9em;
+    color: $colorMainBlue;
+  }
 }
 
 a.button {

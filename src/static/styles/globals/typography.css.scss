@@ -12,7 +12,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.3em;
-  color: darken($colorMediumGrey, 10%);
+  color: $colorDarkGrey;
   text-rendering: optimizeLegibility;
 }
 
@@ -38,7 +38,9 @@ a {
   &:hover,
   &:active,
   &:focus {
-    color: $colorMediumGrey;
+    color: $colorDarkGrey;
+    
+    &:hover { color: $colorMainBlue }
   }
 }
 
@@ -48,7 +50,7 @@ h1 {
 
   @include media($breakTabletPortrait) { font-size: 3.5em }
   @include media($breakTabletLandscape) { font-size: 3.75em }
-  @include media($breakDesktop) { font-size: 4em }
+  @include media($breakDesktop) { font-size: 3em }
 }
 
 h2 { font-size: 1.6em }

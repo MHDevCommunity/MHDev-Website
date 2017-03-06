@@ -7,21 +7,23 @@ angular.module('website')
     Config.getResources().then(
       function success(data) {
         $scope.resources = data;
-        $scope.loaded = true;
         $scope.catagories = _.map(data, 'category');
-        $scope.filtered = _.groupBy(data, 'type');
+        $scope.grouped = _.groupBy(data, 'type');
+        $scope.loaded = true;
       },
       function error(e) { console.log('Couldn\'t get articles', e); }
     );
     
     $scope.showSubcategories = function(category) {
       $scope.category = category;
-      angular.element('#catgegory-list').hide();
-      angular.element('#subcatgegory-list').show();
     };
     
     $scope.setSubcategory = function(subcategory) {
       $scope.subcategory = subcategory;
+    };
+    
+    $scope.removeCategory = function() {
+      $scope.category = null;
     };
 
   }]);

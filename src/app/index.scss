@@ -25,9 +25,12 @@
 //-------------------------------------
 
 /* Pages */
-@import "../static/styles/pages/home";
 @import "../static/styles/pages/social";
 @import "../static/styles/pages/developer";
-@import "../static/styles/pages/about";
 @import "../static/styles/pages/article";
 @import "../static/styles/pages/learning";
+@import "../static/styles/pages/login";
+
+/* Partials */
+@import "../static/styles/pages/partials/topbar.scss";
+@import "../static/styles/pages/partials/project.scss";

@@ -1,24 +1,28 @@
 <section id="learning-centre" ng-controller="ResourcesCtrl">
   <div class="page-header">
     <div class="outer-container">
-    <h1>Learning Centre</h1>
+      <h1>Learning Centre</h1>
     </div>
   </div>
-  
-  <div class="outer-container">
-    <div class="learning-menu">
-      <p>What would you like to learn more about?</p>
 
-      <ul id="catgegory-list" class="learning-menu-list">
+  <div class="outer-container">
+    <div class="learning-menu box">
+      <h3>What would you like to learn more about?</h3>
+
+      <ul id="catgegory-list" class="learning-menu-list" ng-if="!category">
         <li ng-repeat="item in catagories" ng-click="showSubcategories(item)">
-          <h3>{{ item }}</h3>
+          <img ng-src="../static/images/logos/logo-{{ item | lowercase }}.svg" alt="{{ item }}" />
+
+          <p>{{ item }}</p>
         </li>
       </ul>
 
-      <ul id="subcatgegory-list" class="learning-menu-list">
-        <li ng-repeat="item in resources | filter:category" ng-hide="!category" ng-click="setSubcategory(item)">
-          <h2>{{ category }}</h2>
-          <h3>{{ item.subcategory }}</h3>
+      <ul id="subcatgegory-list" class="learning-menu-list" ng-if="category">
+        <li ng-repeat="item in resources | filter:category">
+          <h4 ng-click="removeCategory()">&lsaquo; {{ category }}</h4>
+          
+          <img ng-src="../static/images/logos/logo-{{ item.subcategory | lowercase }}.svg" alt="{{ item }}" />
+          <p>{{ item.subcategory }}</p>
         </li>
       </ul>
     </div>
@@ -28,26 +32,26 @@
         <img class="loader" src="../static/images/balls.svg" alt="loading" ng-if="!loaded" />
       </div>
 
-      <ul ng-if="filtered.docs.length > 0">
+      <ul ng-hide="docsFilter.length === 0">
         <h2>Docs</h2>
 
-        <li ng-repeat="item in filtered.docs | filter:category | filter:subcategory">
+        <li ng-repeat="item in grouped.docs | filter:category | filter:subcategory as docsFilter">
           <h3>{{ item.title }}</h3>
         </li>
       </ul>
 
-      <ul ng-if="filtered.video.length > 0">
+      <ul ng-hide="videoFilter.length === 0">
         <h2>Video Tutorials</h2>
 
-        <li ng-repeat="item in filtered.video | filter:category | filter:subcategory">
+        <li ng-repeat="item in grouped.video | filter:category | filter:subcategory as videoFilter">
           <h3>{{ item.title }}</h3>
-        </li>
+        </li>        
       </ul>
 
-      <ul ng-if="filtered.article.length > 0">
+      <ul ng-hide="articlesFilter.length === 0">
         <h2>Articles</h2>
 
-        <li ng-repeat="item in filtered.article | filter:category | filter:subcategory">
+        <li ng-repeat="item in grouped.article | filter:category | filter:subcategory as articlesFilter">
           <h3>{{ item.title }}</h3>
         </li>
       </ul>
