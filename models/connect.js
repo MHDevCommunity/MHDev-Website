@@ -9,7 +9,7 @@
  */
 
 var mysql = require('mysql');
-var config = require('../config');
+if (process.env['NODE_ENV'] !== 'production') { require('../config'); }
 
 module.exports = mysql.createPool({
     connectionLimit : 10,
