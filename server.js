@@ -7,7 +7,8 @@ var crypto = require('crypto');
 
 // App modules
 var mysql_connection = require('./models/connect');
-require('./config');
+
+if (process.env['NODE_ENV'] !== 'production') { require('./config'); }
 
 var app = express();
 app.use(cors());
